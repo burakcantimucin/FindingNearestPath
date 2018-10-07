@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>YZM3217 - Proje</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">YZM3217 - Proje</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class=""><a href="#hakkinda">HAKKINDA</a></li>
+        <li class=""><a href="#algoritmalar">ALGORİTMALAR</a></li>
+        <li class=""><a href="#surecler">SÜREÇLER</a></li>
+        <li class=""><a href="#problemCozumu">PROBLEM ÇÖZÜMÜ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+    <img class="slide" src="img/tsp.png" alt="Gezgin Satıcı Problemi">
+    <h1>Gezgin Satıcı Problemi</h1> 
+    <p>Celal Bayar Üniversitesi Yazılım Mühendisliği bölümünün 2017-18 Güz Dönemi içerisinde verilen Yapay Zeka dersinin projesidir.</p>
+</div>
+
+<div id="hakkinda" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Hakkında</h2><br>
+      <h4>Gezgin Satıcı Problemi'nin çözümü adına 3 kişilik bir proje grubu oluşturulmuştur.</h4><br>
+      <p>Problem çözümünde iki tür algoritma kullanılmıştır. İlk algoritma olan En Yakın Komşu Algoritması, Açgözlü Algoritmaların bir türüdür. İkinci olarak kullanılan algoritma ise Genetik Algoritması'dır. Bu problem, bir tüccarın harita üzerinde herhangi bir başlangıç noktasından o haritadaki tüm şehirleri dolaşarak başladığı noktaya optimum maliyetle geri dönmesini amaçlamaktadır.</p>
+    </div>
+    <div class="col-sm-4">
+      <img class="slideanim" src="img/tsp.jpg" alt="Gezgin Satıcı Problemi için Türkiye haritasından yaklaşım.">
+    </div>
+  </div>
+</div>
+
+<div id="algoritmalar">
+  <div class="container-fluid bg-grey">
+    <div class="row">
+      <div class="col-sm-4">
+        <img class="slideanim" src="img/knn.jpg">
+      </div>
+      <div class="col-sm-8">
+        <h2>En Yakın Komşu Algoritması</h2><br>
+        <h4><strong>TANIM:</strong> Bu algoritma, GSP için geliştirilmiş en basit ve en iyi bilinen sezgisel
+          algoritmadır. Algoritmanın mantığı hep en yakın komşuya gitmeye dayanır.
+          </h4><br>
+        <p><strong>İÇERİK:</strong> Başlangıç noktası seçilir. Satıcı gibi davranmak gerekir. 
+          Yol boyunca her seferinde en ucuz seçeneği seçilir. Başlangıç noktasına yapılacak son ziyaret haricinde 
+          iki defa bir şehir ziyaret edilmeyecektir. Hatırlayabileceğiniz gibi bir hamilton devresi, aynı başlangıç ve durma noktasına sahiptir.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-8">
+            <h2>Genetik Algoritması</h2><br>
+            <h4><strong>TANIM:</strong> Bu algoritma, klasik yöntemlerle çözümü zor olan problemlere 
+              çözüm bulmak amacıyla biyolojik evrim sürecinin bilgisayar ortamında kodlandığı ve 
+              bu evrim süreci kullanılarak optimum ya da optimuma yakın sonuçların araştırıldığı bir arama yöntemi olarak tanımlanabilir.
+              </h4><br>
+            <p><strong>İÇERİK:</strong> Şehirleri izlerken izlediğimiz rotaların her birini birer kromozom olarak temsil ediyoruz.
+              Buna göre, N şehir içeren bir örnek için farklı gezinme sıralarını ifade eden kromozomlarımız olacaktır.
+              İlk olarak, belirli sayıda kromozomu rastgele şekilde yaratarak bir başlangıç popülasyonu oluşturacağız.
+              Bu popülasyondan, en kısa mesafeyi sağlayan, yani çözüm için en uygun olan kromozomlardan belirli sayıda seçip birbiriyle ikişer ikişer çaprazlayarak yeni bireyler elde edeceğiz.
+              Popülasyondaki en uzun mesafeli, yani en kötü bireyleri eleyeceğiz. Onlardan boşalan yere, çaprazlama sonucunda oluşan yeni bireyleri ekleyeceğiz. Böylece yeni bir nesil oluşacak.
+              Yeni nesildeki en iyi bireyleri seçip çaprazlama işlemlerini tekrarlayacağız. N adet nesil sonucunda bulduğumuz en iyi, en kısa mesafeli kromozom bizim çözümümüz olacaktır.</p>
+          </div>
+          <div class="col-sm-4">
+              <img class="slideanim" src="img/genetic.jpg">
+          </div>
+        </div>
+    </div>
+</div>
+
+<div id="surecler" class="container-fluid text-center bg-grey">
+  <h2>SÜREÇLER</h2><br>
+  <h4>Projede neler oldu?</h4><br>
+  
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/probleminbelirlenmesi.jpg" alt="Problemin Belirlenmesi" style="width:87%;">
+        <p><strong>Problemin Belirlenmesi</strong></p>
+        <p>Ticaret ve lojistik
+          anlamda malın kısa bir zamanda ulaştırılmasının değerinin önemli olması ve optimum bir çözüm
+          bulmak amacıyla bu problem belirlenmiştir.</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/js.png" alt="Algoritmaların Uygulanması" style="width:66%;">
+        <p><strong>Algoritmaların Uygulanması</strong></p>
+        <p>En Yakın Komşu ve Genetik Algoritmaları dışında çizge, ana ve ara fonksiyonları js diliyle uygulanmıştır
+          ve seçilen harita üzerinde gösterimi HTML uzantılı sayfada yapılmıştır.</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/ege.png" alt="Haritanın Seçilmesi" style="width:58%;">
+        <p><strong>Haritanın Seçilmesi</strong></p>
+        <p>Türkiye'nin 7 güzel bölgesinden biri olan Ege bölgesi, projede uygulanacak harita olarak seçilmiştir.
+          Harita üzerinde bulunan 8 il arasındaki mesafeler ile hesaplamalar yapılmıştır.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="problemCozumu" class="container-fluid col-centered">
+    <div class="row" align="center">
+      <img src="img/ege.png" style="display: none;" id="ege">
+      <h2>PROBLEM ÇÖZÜMÜ</h2><br/><br/>
+      <div class="col-centered">
+          <h4 id="noktalar_h1">MERKEZLER ÜZERİNDE GEZİNİZ</h4>
+          <canvas id="noktalar_canvas" width="300px" height="300px"></canvas>
+      </div>
+    </div><br><br>
+    <div id="algorithms" class="row" style="display: none;" align="center">
+        <div class="col-sm-6">
+            <h4 id="eyk_h1">EN YAKIN KOMŞU YÖNTEMİ</h4>
+            <canvas id="canvasEYK" width="300px" height="300px"></canvas> 
+        </div>
+      <div class="col-sm-6">
+          <h4 id="genetik_h1">GENETİK YÖNTEM</h4>
+          <canvas id="canvasGenetik" width="300px" height="300px"></canvas>
+      </div>
+    </div>
+</div>
+<script src="js/Cizge.js"></script>
+<script src="js/EnYakinKomsu.js"></script>
+<script src="js/Genetik.js"></script>
+<script src="js/Fonksiyonlar.js"></script>
+<script src="js/Ana.js"></script>
+
+<div class="bg-grey">
+  <div id="grupUyeleri" class="container text-center">
+    <BR/><BR/><h1>GRUP ÜYELERİ</h1><BR/>
+    <p><em>Bölümümüzü ve yazılımı seven öğrencileriz!</em></p>
+    <p>Projemizi güzel bir site tasarımıyla sunmak istedik. Beğendiğinizi umut ediyoruz.</p>
+    <br>
+    <div class="row">
+      <div class="col-sm-4">
+        <p class="text-center"><strong>Damla DEMİR</strong></p><br>
+      </div>
+      <div class="col-sm-4">
+        <p class="text-center"><strong>Nilay Rabia BİLİR</strong></p><br>
+      </div>
+      <div class="col-sm-4">
+        <p class="text-center"><strong>Burakcan TİMUÇİN</strong></p><br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="En Üste">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Celal Bayar Üniversitesi Yazılım Mühendisliği öğrencileri tarafından yapılmıştır.</p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        window.location.hash = hash;
+      });
+    }
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
